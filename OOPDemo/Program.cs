@@ -66,6 +66,18 @@ namespace OOPDemo
             bank.MakeWithdraw(2222);
             Console.WriteLine($"Actual amount: {bank.GetBalance()}");
 
+            //Abstraction
+            //not abstract
+            EmailSender emailSender = new EmailSender();
+            emailSender.ConnectToSmtpServer();
+            emailSender.InsertCredentials();
+            emailSender.SentEmail("test@test.com", "Hi, Hello", "Welcome in the Jurassic park");
+            emailSender.Disconnect();
+
+            //abstract
+            EmailSenderAsAbstract emailSenderAsAbstract = new EmailSenderAsAbstract();
+            emailSenderAsAbstract.SentEmail("test@test.com", "Hi, Hello", "Welcome in the Jurassic park");
+
             Console.ReadLine();
         }
 
