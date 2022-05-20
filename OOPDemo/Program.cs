@@ -16,7 +16,18 @@ namespace OOPDemo
             person.SayHi();
             person1.SayHi();
 
+            //interface
+            IPrinter printer = GetPrinter();
+            printer.Print("Some content");
+
+
             Console.ReadLine();
+        }
+
+        static IPrinter GetPrinter()
+        {
+            //return new Hp();
+            return new Canon();
         }
     }
 }
