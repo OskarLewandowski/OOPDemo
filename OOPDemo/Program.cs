@@ -60,9 +60,22 @@ namespace OOPDemo
             companyBankAccount.TakeLoan(250000);
             Console.WriteLine($"Actual amount: {companyBankAccount.GetBalance()}");
 
-
+            //Polymorphism
+            Console.WriteLine("\nPolymorphism:");
+            BankAccount bank = GetBankAccount();
+            bank.MakeWithdraw(2222);
+            Console.WriteLine($"Actual amount: {bank.GetBalance()}");
 
             Console.ReadLine();
+        }
+
+        static BankAccount GetBankAccount()
+        {
+            //var bankAccount = new PersonalBankAccount();
+            var bankAccount = new CompanyBankAccount();
+            bankAccount.MakeDeposit(1000);
+
+            return bankAccount;
         }
 
         static IPrinter GetPrinter()

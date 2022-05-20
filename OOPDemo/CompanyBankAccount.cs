@@ -12,5 +12,16 @@ namespace OOPDemo
         {
             this.MakeDeposit(amount);
         }
+
+        public override void MakeWithdraw(float amount)
+        {
+            Console.WriteLine("Make withdrawal for company bank account");
+            if (amount < 0)
+            {
+                throw new Exception("Amount must be positive number");
+            }
+
+            balance -= amount;
+        }
     }
 }

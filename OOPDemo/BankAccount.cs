@@ -9,7 +9,7 @@ namespace OOPDemo
     public class BankAccount
     {
         //if field is private we write it be lower case
-        private float balance;
+        protected float balance;
 
         //this is the same
         public string Name { get; set; }
@@ -34,7 +34,7 @@ namespace OOPDemo
             balance += amount;
         }
 
-        public void MakeWithdraw(float amount)
+        public virtual void MakeWithdraw(float amount)
         {
             if (amount < 0)
             {
