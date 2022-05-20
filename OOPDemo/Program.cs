@@ -38,6 +38,28 @@ namespace OOPDemo
             account.Name = "Some bank account1";
             Console.WriteLine(account.Name);
 
+            //Inheritance
+            Console.WriteLine("\nInheritance:");
+            PersonalBankAccount personalBankAccount = new PersonalBankAccount();
+            personalBankAccount.SetBalance(23456);
+            Console.WriteLine($"Actual amount: {personalBankAccount.GetBalance()}");
+            personalBankAccount.MakeWithdraw(456);
+            Console.WriteLine($"Actual amount: {personalBankAccount.GetBalance()}");
+            personalBankAccount.MakeDeposit(25);
+            Console.WriteLine($"Actual amount: {personalBankAccount.GetBalance()}");
+
+            //only for PersonalBankAccount 
+            //account.RequestPersonalLoan();
+            personalBankAccount.RequestPersonalLoan();
+
+            CompanyBankAccount companyBankAccount = new CompanyBankAccount();
+            companyBankAccount.SetBalance(1_000_000);
+            Console.WriteLine($"Actual amount: {companyBankAccount.GetBalance()}");
+            companyBankAccount.MakeWithdraw(500000);
+            Console.WriteLine($"Actual amount: {companyBankAccount.GetBalance()}");
+            companyBankAccount.TakeLoan(250000);
+            Console.WriteLine($"Actual amount: {companyBankAccount.GetBalance()}");
+
 
 
             Console.ReadLine();
