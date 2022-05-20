@@ -6,7 +6,16 @@ namespace OOPDemo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Person person = new Person();
+            person.Name = "Oskar";
+            Console.WriteLine($"Hello {person.Name}");
+
+            Person person1 = new Person("Oskar1");
+            Console.WriteLine($"Hello {person1.Name}");
+
+            person.SayHi();
+            person1.SayHi();
+
             Console.ReadLine();
         }
     }
